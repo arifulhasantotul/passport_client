@@ -1,12 +1,10 @@
 import React from "react";
-import * as BsIcons from "react-icons/bs";
-import * as FcIcons from "react-icons/fc";
 import { Link } from "react-router-dom";
 import LogoImage from "../../images/logo.svg";
 import SideImage from "../../images/phone.svg";
 import LoginCss from "./Login.module.css";
 
-const Login = () => {
+const Register = () => {
   return (
     <div className={LoginCss.page_wrapper_login}>
       {/* left side of the login page */}
@@ -19,13 +17,25 @@ const Login = () => {
         <div className={LoginCss.login_form_wrapper}>
           {/* logo */}
           <img src={LogoImage} alt="Pioneer Alpha logo" />
-          <p className={LoginCss.subtitle}>Explore new courses... Hurry up!!</p>
+          <p className={LoginCss.subtitle}>
+            Courses are waiting for you... Hurry up!!
+          </p>
           {/* login fields */}
           <div className={LoginCss.login_field}>
             <input
               className={LoginCss.login_input}
+              type="text"
+              placeholder="Name"
+            />
+            <input
+              className={LoginCss.login_input}
               type="email"
               placeholder="Email Address"
+            />
+            <input
+              className={LoginCss.login_input}
+              type="tel"
+              placeholder="Phone"
             />
             <input
               className={LoginCss.login_input}
@@ -37,22 +47,10 @@ const Login = () => {
               type="button"
               value="LOG IN"
             />
-            <hr />
-            <span className={LoginCss.or}>or</span>
-          </div>
-
-          <div className={LoginCss.third_party_login}>
-            <span className={LoginCss.third_icon}>
-              <BsIcons.BsFacebook className={LoginCss.blue} />
-            </span>
-            <span className={LoginCss.third_icon}>
-              {" "}
-              <FcIcons.FcGoogle />
-            </span>
           </div>
 
           <p className={LoginCss.account}>
-            Don't have an account? <Link to="/register">Sign Up</Link>
+            Already have an account? <Link to="/">Sign In</Link>
           </p>
         </div>
       </div>
@@ -60,4 +58,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
