@@ -7,3 +7,28 @@ html {
   font-size: 62.5%;
   letter-spacing: 0.5px;
 }
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 60.5%;
+    letter-spacing: 0.4px;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 57.5%;
+    letter-spacing: 0.3px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 54.5%;
+    letter-spacing: 0.3px;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 51.5%;
+    letter-spacing: 0.4px;
+  }
+}
