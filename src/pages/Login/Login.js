@@ -7,11 +7,12 @@ import SideImage from "../../images/phone.svg";
 import LoginCSS from "./Login.module.css";
 
 const Login = () => {
+  console.log(typeof process.env.REACT_APP_BACKEND_URL);
   const googleSignIn = () => {
-    window.open("http://localhost:5000/auth/google", "_self");
+    window.open(process.env.REACT_APP_BACKEND_URL + `/auth/google`, "_self");
   };
   const facebookSignIn = () => {
-    window.open("http://localhost:5000/auth/facebook", "_self");
+    window.open(process.env.REACT_APP_BACKEND_URL + `/auth/facebook`, "_self");
   };
   return (
     <div className={LoginCSS.page_wrapper_login}>
