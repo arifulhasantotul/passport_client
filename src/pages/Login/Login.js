@@ -10,6 +10,9 @@ const Login = () => {
   const googleSignIn = () => {
     window.open("http://localhost:5000/auth/google", "_self");
   };
+  const facebookSignIn = () => {
+    window.open("http://localhost:5000/auth/facebook", "_self");
+  };
   return (
     <div className={LoginCSS.page_wrapper_login}>
       {/* left side of the login page */}
@@ -45,9 +48,11 @@ const Login = () => {
           </div>
 
           <div className={LoginCSS.third_party_login}>
-            <span className={LoginCSS.third_icon}>
+            {/* facebook login */}
+            <span className={LoginCSS.third_icon} onClick={facebookSignIn}>
               <BsIcons.BsFacebook className={LoginCSS.blue} />
             </span>
+            {/* google sign in */}
             <span className={LoginCSS.third_icon} onClick={googleSignIn}>
               {" "}
               <FcIcons.FcGoogle />
