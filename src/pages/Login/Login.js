@@ -7,6 +7,9 @@ import SideImage from "../../images/phone.svg";
 import LoginCSS from "./Login.module.css";
 
 const Login = () => {
+  const googleSignIn = () => {
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
   return (
     <div className={LoginCSS.page_wrapper_login}>
       {/* left side of the login page */}
@@ -45,7 +48,7 @@ const Login = () => {
             <span className={LoginCSS.third_icon}>
               <BsIcons.BsFacebook className={LoginCSS.blue} />
             </span>
-            <span className={LoginCSS.third_icon}>
+            <span className={LoginCSS.third_icon} onClick={googleSignIn}>
               {" "}
               <FcIcons.FcGoogle />
             </span>
