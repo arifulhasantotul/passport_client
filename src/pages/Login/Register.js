@@ -82,9 +82,8 @@ const Register = () => {
         },
         body: JSON.stringify({ name: username, email, phone, password }),
       });
-      console.log(res);
       const data = await res.json();
-      console.log(data);
+
       if (data.toast === "success") {
         alert("Successfully added user");
         e.target.reset();
