@@ -95,6 +95,7 @@
   border: none;
   color: #fff;
   margin-bottom: 4rem;
+  cursor: pointer;
 }
 .submit_btn_register {
   margin-bottom: -1rem;
@@ -134,13 +135,13 @@
 .err_msg {
   max-width: 28rem;
   font-size: 12px;
-  padding: 3px;
   color: red;
+  font-weight: bold;
   display: none;
   margin: 0 auto;
 }
 .login_input:invalid[focused="true"] {
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 .login_input:invalid[focused="true"] ~ span {

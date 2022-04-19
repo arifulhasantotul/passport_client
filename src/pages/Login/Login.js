@@ -7,7 +7,6 @@ import SideImage from "../../images/phone.svg";
 import LoginCSS from "./Login.module.css";
 
 const Login = () => {
-  console.log(typeof process.env.REACT_APP_BACKEND_URL);
   const googleSignIn = () => {
     window.open(process.env.REACT_APP_BACKEND_URL + `/auth/google`, "_self");
   };

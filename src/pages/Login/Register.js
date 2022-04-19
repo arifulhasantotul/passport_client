@@ -63,14 +63,39 @@ const Register = () => {
     },
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
-  console.log(values);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { username, email, phone, password } = values;
+    console.log(username, email, phone, password);
+
+    try {
+      const url = process.env.REACT_APP_BACKEND_URL + `/auth/register`;
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ name: username, email, phone, password }),
+      });
+      console.log(res);
+      const data = await res.json();
+      console.log(data);
+      if (data.toast === "success") {
+        alert("Successfully added user");
+        e.target.reset();
+      } else {
+        alert("Plz try again");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className={LoginCSS.page_wrapper_login}>
       {/* left side of the login page */}
@@ -88,7 +113,7 @@ const Register = () => {
           </p>
           {/* login fields */}
           <div className={LoginCSS.login_field}>
-            <form onSubmit={handleSubmit}>
+            <form method="POST" onSubmit={handleSubmit}>
               {inputs.map((input) => (
                 <FormInput
                   key={input.id}
