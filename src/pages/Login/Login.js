@@ -42,7 +42,7 @@ const Login = () => {
             <input
               className={LoginCSS.submit_btn}
               type="button"
-              value="LOG IN"
+              value="SIGN IN"
             />
             <hr />
             <span className={LoginCSS.or}>or</span>

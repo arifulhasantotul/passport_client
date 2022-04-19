@@ -33,7 +33,7 @@
   max-width: 70rem;
   max-height: 69rem;
   object-fit: cover;
-  margin-top: 7rem;
+  margin-top: 7.2rem;
   margin-bottom: 3rem;
 }
 .page_login_right {
@@ -45,7 +45,7 @@
   transform: translateY(-50%);
   left: -15rem;
   width: 50rem;
-  height: 70rem;
+  min-height: 70rem;
   -moz-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
@@ -77,6 +77,7 @@
   margin: 2rem auto;
   padding: 1rem;
 }
+.submit_btn_register,
 .submit_btn,
 .login_input {
   min-width: 28rem;
@@ -88,11 +89,15 @@
   margin: 1.2rem;
   padding: 1rem;
 }
+.submit_btn_register,
 .submit_btn {
   background: #625a99;
   border: none;
   color: #fff;
   margin-bottom: 4rem;
+}
+.submit_btn_register {
+  margin-bottom: -1rem;
 }
 .or {
   position: absolute;
@@ -118,6 +123,7 @@
   font-size: 1.5rem;
   color: #707070;
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 .account Link,
 .account a {
@@ -125,7 +131,21 @@
   text-decoration: none;
   font-weight: 600;
 }
+.err_msg {
+  max-width: 28rem;
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+  margin: 0 auto;
+}
+.login_input:invalid[focused="true"] {
+  border: 1px solid red;
+}
 
+.login_input:invalid[focused="true"] ~ span {
+  display: block;
+}
 .account a:hover {
   text-decoration: underline;
 }
@@ -136,25 +156,27 @@
   .login_form_wrapper {
     left: -20rem;
     max-width: 50rem;
-    max-height: 70rem;
   }
 }
 @media (max-width: 1024px) {
   .left_logo {
-    max-width: 32rem;
+    max-width: 35rem;
     object-fit: cover;
     margin-top: 27rem;
-    margin-bottom: 4rem;
+    margin-bottom: 7rem;
   }
   .login_form_wrapper {
     left: -23rem;
     max-width: 45rem;
-    max-height: 70rem;
   }
 }
 @media (max-width: 768px) {
+  .page_login_left {
+    justify-content: start;
+    padding-left: 2rem;
+  }
   .left_logo {
-    max-width: 30rem;
+    max-width: 32rem;
     object-fit: cover;
     margin-top: 30rem;
     margin-bottom: 4rem;
@@ -162,7 +184,6 @@
   .login_form_wrapper {
     left: -23rem;
     max-width: 42rem;
-    max-height: 70rem;
   }
 }
 @media (max-width: 500px) {
